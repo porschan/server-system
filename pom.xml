@@ -11,6 +11,7 @@
     <name>server-system</name>
     <description>server-system project for Spring Boot</description>
 
+    <!-- 继承 spring boot 父包 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -25,16 +26,37 @@
     </properties>
 
     <dependencies>
+
+        <!-- 构建web项目模块 包括了Tomcat和spring-webmvc -->
+        <!-- spring-boot-starter-web 默认依赖了tomcat的starter 所以使得项目可以直接运行而不需要部署到tomcat中-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- pom.xml中依赖 spring-boot-starter-test 测试模块，包括JUnit、Hamcrest、Mockito -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- RSA -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk16</artifactId>
+            <version>1.46</version>
+        </dependency>
+
+        <!-- RSA -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+            <scope>provided</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -45,6 +67,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
